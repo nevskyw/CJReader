@@ -1,9 +1,9 @@
-FROM golang:1.18 AS builder
+FROM golang:latest
 
-COPY . /github.com/nevskyw/CJReader
-WORKDIR /github.com/nevskyw/CJReader
+WORKDIR /CJReader
+
+COPY ./ /CJReader
 
 RUN go mod download
-RUN go build -o /bin/CJReader
 
-CMD ["./CJReader"]
+ENTRYPOINT go run commands/main.go
