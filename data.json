@@ -1,0 +1,17 @@
+[
+  {
+    "name": "Avocado",
+    "price": 233.2,
+    "rating": 1.2
+  },
+  {
+    "name": "Banan",
+    "price": 100,
+    "rating": 5
+  },
+  {
+    "name": "Apple Black",
+    "price": 400,
+    "rating": 3
+  }
+]
