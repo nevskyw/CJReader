@@ -1,9 +1,14 @@
-FROM golang:latest
+FROM golang:1.18
 
-WORKDIR /CJReader
+WORKDIR /usr/src/app
 
-COPY ./ /CJReader
+COPY go.mod ./
+RUN go mod download && go mod verify
 
-RUN go mod download
+COPY . .
+RUN go build -v -o /usr/local/bin/app ./...
 
-ENTRYPOINT go run commands/main.go
+CMD ["app"]
+
+# $ docker build -t my-golang-app .
+# $ docker run -it --rm --name my-running-app my-golang-app
